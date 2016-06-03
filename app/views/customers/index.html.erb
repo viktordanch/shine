@@ -5,7 +5,7 @@
   <%= form_for :customers, method: :get do |f| %>
   <div class="input-group input-group-lg">
     <%= label_tag :keywords, nil, class: 'sr-only' %>
-    <%= text_field_tag :keywords, nil, placeholder: 'First name, Last name, or Email Address',
+    <%= text_field_tag :keywords, params[:keywords], placeholder: 'First name, Last name, or Email Address',
                        class: 'form-control input-lg'%>
     <span class="input-group-btn">
       <%= submit_tag 'Find Customers', class: 'btn btn-lg btn-primary' %>
@@ -17,25 +17,21 @@
 <section class="search-result">
   <header>
     <h1 class="h3">Results</h1>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-          <th>Joined</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @customers.each do |customer| %>
-        <tr>
-          <th><%= customer.first_name %></th>
-          <th><%= customer.last_name %></th>
-          <th><%= customer.email %></th>
-          <th><%= l customer.created_at.to_date %></th>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
   </header>
+  <%= render partial: 'pager', locals: { page: @page, keywords: @keywords } %>
+  <ol class="list-group">
+    <% @customers.each do |customer| %>
+      <li class="list-group-item clearfix">
+        <h3 class="pull-right">
+          <small class="text-uppercase" > Joined </small>
+          <%= l customer.created_at.to_date %></h3>
+        <h2 class="h3">
+          <%= customer.first_name %> <%= customer.last_name %>
+          <small><%= customer.username %></small>
+        </h2>
+        <h5><%= customer.email %></h5>
+      </li>
+    <% end %>
+  </ol>
+  <%= render partial: 'pager', locals: { page: @page, keywords: @keywords } %>
 </section>
