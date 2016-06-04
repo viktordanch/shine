@@ -26,6 +26,8 @@ gem 'bower-rails'
 gem 'haml-rails', '~> 0.9.0'
 gem 'faker'
 gem "figaro"
+gem "heroku"
+gem "puma"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
