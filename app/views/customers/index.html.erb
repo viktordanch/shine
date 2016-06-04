@@ -16,7 +16,7 @@
     <h1 class="SearchFor" ng-if="searchedFor"><small>Searched for:</small>{{searchedFor}}</h1>
 
   </section>
-  <section class="search-result">
+  <section class="search-result"  ng-if="customers.length > 0">
     <header>
       <h1 class="h3">Results</h1>
     </header>
