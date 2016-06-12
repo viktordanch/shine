@@ -45,6 +45,9 @@ group :development, :test do
   gem 'poltergeist'
   gem 'database_cleaner'
   gem 'teaspoon-jasmine'
+  gem 'angular-rails-templates'
+  gem 'sprockets-rails', '~> 2.3', '>= 2.3.3'
+  gem 'sprockets', '~> 2.8'
 end
 
 group :development do

@@ -1,8 +1,8 @@
 example_id                                    | status | run_time        |
 --------------------------------------------- | ------ | --------------- |
-./spec/dummy_spec.rb[1:1]                     | passed | 0.0018 seconds  |
-./spec/dummy_spec.rb[1:2]                     | passed | 0.00097 seconds |
-./spec/features/angular_test_app_spec.rb[1:1] | passed | 2.03 seconds    |
-./spec/features/customer_search_spec.rb[1:1]  | passed | 0.56094 seconds |
-./spec/features/customer_search_spec.rb[1:2]  | passed | 2.31 seconds    |
-./spec/models/user_spec.rb[1:1:1]             | passed | 0.0568 seconds  |
+./spec/dummy_spec.rb[1:1]                     | passed | 0.00208 seconds |
+./spec/dummy_spec.rb[1:2]                     | passed | 0.00257 seconds |
+./spec/features/angular_test_app_spec.rb[1:1] | passed | 1.89 seconds    |
+./spec/features/customer_search_spec.rb[1:1]  | passed | 0.92604 seconds |
+./spec/features/customer_search_spec.rb[1:2]  | passed | 0.60271 seconds |
+./spec/models/user_spec.rb[1:1:1]             | passed | 0.0195 seconds  |
