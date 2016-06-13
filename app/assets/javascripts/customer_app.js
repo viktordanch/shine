@@ -5,17 +5,39 @@ app.config([
     $routeProvider.when('/', {
       controller: 'CustomerSearchController',
       templateUrl: 'customer_search.html'
+    }).when('/:id', {
+      controller: 'CustomerDetailController',
+      templateUrl: 'customer_detail.html'
     });
   }
 ]);
 
-app.controller('CustomerSearchController', ['$scope', "$http", function ($scope, $http) {
+app.controller('CustomerDetailController',
+  ['$scope', "$http", '$location', '$routeParams',
+    function ($scope, $http, $location, $routeParams) {
+      var customerId = $routeParams.id;
+      $scope.customer = {};
+
+      $http.get('/customers/' + customerId + '.json').then(function (response) {
+        $scope.customer = response.data;
+      }, function (response) {
+        alert("There was a problem: " + response.status);
+      })
+}]);
+
+app.controller('CustomerSearchController',
+  ['$scope', "$http", '$location',
+    function ($scope, $http, $location) {
     $scope.customers = [];
     var page = 0;
     $scope.previousPage = function () {
       page = page - 1;
       $scope.search($scope.searchedFor);
     };
+
+    $scope.viewDetail = function (customer) {
+      $location.path('/' + customer.id);
+    },
 
     $scope.nextPage = function () {
       page = page + 1;

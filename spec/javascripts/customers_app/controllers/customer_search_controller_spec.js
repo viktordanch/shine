@@ -30,28 +30,28 @@ describe("CustomerSearchController", function () {
         first_name: 'Bob',
         last_name: 'Jones',
         username: 'jonesy',
-        emal: 'bjones@foo.net'
+        email: 'bjones@foo.net'
       },
       {
         id: 124,
         first_name: 'Bob',
         last_name: 'Jones',
         username: 'jonesy',
-        emal: 'bjones@foo.net'
+        email: 'bjones@foo.net'
       },
       {
         id: 125,
         first_name: 'Bob',
         last_name: 'Jones',
         username: 'jonesy',
-        emal: 'bjones@foo.net'
+        email: 'bjones@foo.net'
       },
       {
         id: 126,
         first_name: 'Bob',
         last_name: 'Jones',
         username: 'jonesy',
-        emal: 'bjones@foo.net'
+        email: 'bjones@foo.net'
       }
     ];
 

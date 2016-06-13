@@ -21,4 +21,13 @@ class CustomersController < ApplicationController
       format.json { render json: @customers }
     end
   end
+
+  def show
+    customer = Customer.find_by_id(params[:id])
+
+    respond_to do |format|
+      format.html {}
+      format.json { render json: customer }
+    end
+  end
 end
