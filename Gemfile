@@ -28,6 +28,9 @@ gem 'faker'
 gem "figaro"
 gem "heroku"
 gem "puma"
+gem 'angular-rails-templates'
+gem 'sprockets-rails', '~> 2.3', '>= 2.3.3'
+gem 'sprockets', '~> 2.8'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -45,9 +48,6 @@ group :development, :test do
   gem 'poltergeist'
   gem 'database_cleaner'
   gem 'teaspoon-jasmine'
-  gem 'angular-rails-templates'
-  gem 'sprockets-rails', '~> 2.3', '>= 2.3.3'
-  gem 'sprockets', '~> 2.8'
 end
 
 group :development do
