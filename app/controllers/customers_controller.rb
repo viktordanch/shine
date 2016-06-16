@@ -1,6 +1,7 @@
 class CustomersController < ApplicationController
   PAGE_SIZE = 10
 
+
   def index
     @page = (params[:page] || 0).to_i
 
@@ -23,7 +24,7 @@ class CustomersController < ApplicationController
   end
 
   def show
-    customer = Customer.find_by_id(params[:id])
+    customer = CustomerDetail.find(params[:id])
 
     respond_to do |format|
       format.html {}
