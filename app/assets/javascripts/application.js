@@ -14,6 +14,13 @@
 //= require jquery_ujs
 //= require angular
 //= require angular-route
+//= require angular-resource
+//= require angular-messages
 //= require angular-rails-templates
+//= require spin.min
+//= require ladda.min
+//= require ladda.jquery.min
 //= require_tree ./templates
-//= require_tree .
+//= require angular_test_app
+//= require customer_app
+

@@ -23,6 +23,13 @@ class CustomersController < ApplicationController
     end
   end
 
+  def update
+    p params
+    customer_detail = CustomerDetail.find(params[:id])
+    customer_detail.update(params)
+    head :ok
+  end
+
   def show
     customer = CustomerDetail.find(params[:id])
 

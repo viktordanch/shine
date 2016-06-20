@@ -9,16 +9,19 @@ class CreateCustomerDetailsMaterializedView < ActiveRecord::Migration
       customers.email AS customer_email,
       customers.username AS customer_username,
       customers.created_at AS customer_created_at,
+
       billing_address.id AS billing_address_id,
       billing_address.street AS billing_address_street,
       billing_address.city AS billing_address_city,
       billing_state.code AS billing_address_code,
       billing_address.zipcode AS billing_address_zipcode,
+
       shipping_address.id AS shipping_address_id,
       shipping_address.street AS shipping_address_street,
       shipping_address.city AS shipping_address_city,
       shipping_state.code AS shipping_address_code,
       shipping_address.zipcode AS shipping_address_zipcode
+
       FROM customers
       JOIN customers_billing_addresses ON customers.id = customers_billing_addresses.customer_id
       JOIN addresses billing_address ON billing_address.id = customers_billing_addresses.address_id
