@@ -1,0 +1,16 @@
+<div class="clearfix">
+  <h3 class="pull-right">
+  <small class="text-uppercase" > Joined </small>
+  {{ (cust.created_at || cust.customer_created_at) | date }}</h3>
+
+  <h2 class="h3">
+  {{ cust.first_name || cust.customer_first_name }} {{ cust.last_name || cust.customer_last_name }}
+  <small>{{ customer.username || cust.customer_username }}</small>
+  </h2>
+  <div class="pull-right" ng-if="viewDetailsFunction">
+    <button class="btn btn-small btn-primary" ng-click="viewDetailsFunction(cust)">
+      View Details ...
+    </button>
+  </div>
+  <h5>{{ cust.email || cust.customer_email }}</h5>
+</div>

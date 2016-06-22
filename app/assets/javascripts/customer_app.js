@@ -20,6 +20,16 @@ app.controller('CustomerCreditCardController', ['$scope', '$resource',
     }
 }]);
 
+app.directive("customerSummary", function () {
+  return {
+    "scope" : {
+      "cust" : '=',
+      "viewDetailsFunction" : "="
+    },
+    "templateUrl" : "customer_summary.html"
+  }
+})
+
 app.controller('CustomerDetailController',
   ['$scope',"$http", '$location', "$routeParams", "$resource",
     function ($scope, $http, $location, $routeParams, $resource) {
@@ -92,7 +102,7 @@ app.controller('CustomerSearchController',
       $scope.search($scope.searchedFor);
     };
 
-    $scope.viewDetail = function (customer) {
+    $scope.viewDetails = function (customer) {
       $location.path('/' + customer.id);
     },
 
