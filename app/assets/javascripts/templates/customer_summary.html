@@ -4,7 +4,7 @@
   {{ (cust.created_at || cust.customer_created_at) | date }}</h3>
 
   <h2 class="h3">
-  {{ cust.first_name || cust.customer_first_name }} {{ cust.last_name || cust.customer_last_name }}
+  {{ (cust.first_name || cust.customer_first_name) | name }} {{ (cust.last_name || cust.customer_last_name) | name }}
   <small>{{ customer.username || cust.customer_username }}</small>
   </h2>
   <div class="pull-right" ng-if="viewDetailsFunction">
