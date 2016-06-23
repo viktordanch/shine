@@ -1,40 +1,22 @@
 var app = angular.module('customers');
 
 app.controller('CustomerSearchController',
-  ['$scope', "$http", '$location',
-    function ($scope, $http, $location) {
+  ['$scope', '$location', 'CustomerSearch',
+    function ($scope, $location, CustomerSearch) {
       $scope.customers = [];
-      var page = 0;
-      $scope.previousPage = function () {
-        page = page - 1;
-        $scope.search($scope.searchedFor);
-      };
 
       $scope.viewDetails = function (customer) {
         $location.path('/' + customer.id);
       },
 
-        $scope.nextPage = function () {
-          page = page + 1;
-          $scope.search($scope.searchedFor);
-        };
+      CustomerSearch.successCallback(function (customers) {
+        $scope.customers = customers;
+      })
 
-      $scope.search = function (searchTerm) {
-        if (searchTerm.length < 3) {
-          return;
-        }
+      $scope.previousPage = CustomerSearch.previousPage;
 
-        $scope.searchedFor = searchTerm;
-        $http.get('/customers.json',
-          { 'params' : { 'keywords' : searchTerm, page: page } }
-        ).then(
-          function (response) {
-            $scope.customers = response.data;
-          },function (response) {
-            alert("There was a prodlem: " + response.status);
-          }
-        );
-      }
+      $scope.nextPage = CustomerSearch.nextPage;
 
+      $scope.search = CustomerSearch.search;
     }
   ]);

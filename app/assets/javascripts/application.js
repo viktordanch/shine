@@ -23,6 +23,7 @@
 //= require_tree ./templates
 //= require angular_test_app
 //= require customer_app
+//= require_tree ./services
 //= require_tree ./controllers
 //= require_tree ./directives
 //= require_tree ./filters
