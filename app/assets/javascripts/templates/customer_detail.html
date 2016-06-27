@@ -9,7 +9,9 @@
   <div class="col-md-6">
     <article class="panel panel-primary">
       <header class="panel-heading">
-        <h2 class="h1">Customer</h2>
+        <h2 class="h1">
+          <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
+          Customer</h2>
       </header>
       <section class="panel-body">
         <div class="row">
@@ -76,7 +78,9 @@
     </article>
     <article class="panel panel-default">
       <header class="panel-heading">
-        <h2 class="h4">Shipping Address</h2>
+        <h2 class="h4">
+          <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
+          Shipping Address</h2>
       </header>
       <section class="panel-body">
         <div class="row">
@@ -149,7 +153,9 @@
   <div class="col-md-6 billing-info">
     <article class="panel panel-default">
       <header class="panel-heading">
-        <h2 class="h4">Billing Info</h2>
+        <h2 class="h4">
+          <i class="glyphicon glyphicon-credit-card" aria-hidden="true"></i>
+          Billing Info</h2>
       </header>
       <section class="panel-body" ng-controller="CustomerCreditCardController"
         ng-init="setCardholder(customerId)">
@@ -246,6 +252,16 @@
       </section>
     </article>
     <div class="text-right">
+      <button ng-click=""
+              class="btn btn-lg btn-danger ladda-button save-button-js"
+              data-style="expand-right"
+              type="button">
+      <!--ng-disabled="form.$invalid || form.$pristine"-->
+        <span class="ladda-label">
+          <i class="glyphicon glyphicon-ban-circle" aria-hidden="true"></i>
+          Deactivate Customer
+        </span>
+      </button>
       <button ng-click="save()"
               class="btn btn-lg btn-primary ladda-button save-button-js"
               data-style="expand-right"
@@ -253,9 +269,11 @@
               ng-disabled="form.$invalid || form.$pristine"
         >
         <span class="ladda-label">
+          <i class="glyphicon glyphicon-save" aria-hidden="true"></i>
           Save Changes
         </span>
       </button>
+
     </div>
   </div>
 

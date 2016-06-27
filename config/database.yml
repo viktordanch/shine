@@ -82,6 +82,6 @@ test:
 #
 production:
   <<: *default
-  database: shine_production
+  database: shine_development
   username: shine
   password: <%= ENV['SHINE_DATABASE_PASSWORD'] %>

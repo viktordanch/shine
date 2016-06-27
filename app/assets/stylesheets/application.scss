@@ -1,0 +1,29 @@
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url(image_path("fonts/bootstrap/glyphicons-halflings-regular.eot"));
+  src: url(image_path("fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix")) format("embedded-opentype"),
+  url(image_path("fonts/bootstrap/glyphicons-halflings-regular.woff2")) format("woff2"),
+  url(image_path("fonts/bootstrap/glyphicons-halflings-regular.woff")) format("woff"),
+  url(image_path("fonts/bootstrap/glyphicons-halflings-regular.ttf")) format("truetype"),
+  url(image_path("fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular")) format("svg");
+}
+/* line 24, /home/viktor/projects/shine/vendor/assets/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_glyphicons.scss */
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
