@@ -16,6 +16,7 @@
 //= require angular-route
 //= require angular-resource
 //= require angular-messages
+//= require angular-bootstrap
 //= require angular-rails-templates
 //= require spin.min
 //= require ladda.min

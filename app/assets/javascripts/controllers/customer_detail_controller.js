@@ -1,10 +1,30 @@
 var app = angular.module('customers');
 
 app.controller('CustomerDetailController',
-  ['$scope',"$http", '$location', "$routeParams", "$resource",
-    function ($scope, $http, $location, $routeParams, $resource) {
+  ['$scope',"$http", '$location', "$routeParams", "$resource", "$uibModal",
+    function ($scope, $http, $location, $routeParams, $resource, $uibModal) {
       var copiedShippingAddress = false;
       var backupShippingAddress = {};
+
+      $scope.deactivate = function () {
+        var modalInstance = $uibModal.open({
+          templateUrl: 'confirm_deactivate.html',
+          controller: 'ConfirmDeactivateController'
+        });
+
+        modalInstance.result.then(function () {
+          $scope.alert = {
+            type: "success",
+            message: 'Customer deactivated.'
+          };
+        }, function () {
+          $scope.alert = {
+            type: "danger",
+            message: 'Customer still active.'
+          };
+        });
+      };
+
       $scope.customerId = $routeParams.id;
       var Customer = $resource("/customers/:customerId.json",
         { "customerId": "@customer_id" },
@@ -36,6 +56,10 @@ app.controller('CustomerDetailController',
         }
       };
 
+      $scope.closeAlert = function () {
+        $scope.alert = undefined;
+      },
+
       $scope.save = function () {
         if ($scope.form.$valid) {
           var l = Ladda.create( document.querySelector('.save-button-js'));
@@ -44,11 +68,19 @@ app.controller('CustomerDetailController',
           $scope.customer.$save(function () {
               $scope.form.$setPristine();
               $scope.form.$setUntouched();
+              $scope.alert = {
+                type: "success",
+                message: 'Customer successfully saved.'
+              };
               l.stop();
             },
             function () {
+              $scope.alert = {
+                type: "danger",
+                message: "Customer couldn't be saved."
+              };
+
               l.stop();
-              alert("Save failed :(");
             }
           );
         }

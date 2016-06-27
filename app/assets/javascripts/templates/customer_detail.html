@@ -4,6 +4,13 @@
   </customer_summary>
 </header>
 
+<section>
+  <uib-alert ng-show="alert"
+    type="{{alert.type}}" close="closeAlert()">
+    {{alert.message}}
+  </uib-alert>
+</section>
+
 <form novalidate name="form">
   <div class="row">
   <div class="col-md-6">
@@ -98,7 +105,7 @@
               </p>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 col-xs-12">
             <div class="form-group has-feedback" ng-class="{
               'has-error': form.shipping_address_city.$invalid && form.shipping_address_city.$dirty,
               'has-success': form.shipping_address_city.$valid && form.shipping_address_city.$touched
@@ -112,7 +119,7 @@
               </p>
             </div>
           </div>
-          <div class="col-md-2">
+          <div class="col-md-2 col-xs-4">
             <div class="form-group" ng-class="{
               'has-error': form.shipping_address_code.$invalid && form.shipping_address_code.$dirty,
               'has-success': form.shipping_address_code.$valid && form.shipping_address_code.$touched
@@ -128,7 +135,7 @@
               </p>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 col-xs-8">
             <div class="form-group has-feedback" ng-class="{
               'has-error': form.shipping_address_zipcode.$invalid && form.shipping_address_zipcode.$dirty,
               'has-success': form.shipping_address_zipcode.$valid && form.shipping_address_zipcode.$touched
@@ -252,8 +259,8 @@
       </section>
     </article>
     <div class="text-right">
-      <button ng-click=""
-              class="btn btn-lg btn-danger ladda-button save-button-js"
+      <button ng-click="deactivate()"
+              class="btn btn-lg btn-danger ladda-button deactivate-button-js"
               data-style="expand-right"
               type="button">
       <!--ng-disabled="form.$invalid || form.$pristine"-->

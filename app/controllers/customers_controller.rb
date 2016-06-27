@@ -24,7 +24,6 @@ class CustomersController < ApplicationController
   end
 
   def update
-    p params
     customer_detail = CustomerDetail.find(params[:id])
     customer_detail.update(params)
     head :ok
